@@ -1569,3 +1569,580 @@
 | 3 | Relro bypass | N/A | 🟠 High |
 | 4 | Fortify source bypass | N/A | 🟡 Medium |
 
+## 11. 🧠 **HARDWARE / ARCHITECTURE (CPU)**
+
+### ⚡ 11.1 SPECULATIVE EXECUTION (SPECTRE VARIANT)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Spectre v1 (Bounds Check Bypass) | `CWE-1303` | 🔴 Critical |
+| 2 | Spectre v2 (Branch Target Injection) | `CWE-1303` | 🔴 Critical |
+| 3 | Spectre v4 (Speculative Store Bypass) | `CWE-1303` | 🔴 Critical |
+| 4 | Spectre RSB (Return Stack Buffer) | `CWE-1303` | 🟠 High |
+| 5 | Spectre SWAPGS (Kernel entry) | `CWE-1303` | 🟠 High |
+| 6 | Spectre-BHB (Branch History Injection) | `CWE-1303` | 🔴 Critical |
+
+### ❄️ 11.2 MELTDOWN VARIANT
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Meltdown (original) | `CWE-200` | 🔴 Critical |
+| 2 | Meltdown (KPTI bypass) | `CWE-200` | 🟠 High |
+| 3 | Meltdown-PK (Protection Keys) | `CWE-200` | 🟠 High |
+
+### 📦 11.3 MDS (MICROARCHITECTURAL DATA SAMPLING)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | ZombieLoad v1 | `CWE-200` | 🔴 Critical |
+| 2 | ZombieLoad v2 | `CWE-200` | 🔴 Critical |
+| 3 | RIDL (Rogue In-Flight Data Load) | `CWE-200` | 🔴 Critical |
+| 4 | Fallout | `CWE-200` | 🔴 Critical |
+| 5 | Store-to-Leak (MFBDS) | `CWE-200` | 🔴 Critical |
+| 6 | TSX Asynchronous Abort (TAA) | `CWE-200` | 🔴 Critical |
+| 7 | SRBDS (Special Register Buffer Data Sampling) | `CWE-200` | 🟠 High |
+
+### 🧬 11.4 SIDE CHANNEL
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Cache timing (L1/L2/L3) | `CWE-385` | 🟠 High |
+| 2 | Branch prediction | `CWE-385` | 🟠 High |
+| 3 | Port contention | `CWE-385` | 🟡 Medium |
+| 4 | Power analysis | `CWE-385` | 🟡 Medium |
+| 5 | Electromagnetic (EM) | `CWE-385` | 🟡 Medium |
+| 6 | Acoustic (coil whine) | `CWE-385` | 🟢 Low |
+| 7 | Rowhammer (DRAM) | `CWE-1241` | 🔴 Critical |
+| 8 | Rowhammer (TRRespass) | `CWE-1241` | 🔴 Critical |
+
+### 🧩 11.5 ENCLAVE / SGX
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | SGAxe (SGX key extraction) | `CWE-522` | 🔴 Critical |
+| 2 | CacheOut (SGX) | `CWE-200` | 🔴 Critical |
+| 3 | Load Value Injection (LVI) | `CWE-1303` | 🔴 Critical |
+| 4 | Plundervolt (voltage glitching) | `CWE-1304` | 🔴 Critical |
+
+### 🔧 11.6 MICROCODE
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Microcode update rollback | `CWE-757` | 🟠 High |
+| 2 | Corrupted microcode load | `CWE-94` | 🔴 Critical |
+| 3 | Microcode signature bypass | `CWE-347` | 🔴 Critical |
+
+---
+
+## 12. 💾 **FILE SYSTEMS & STORAGE**
+
+### 📂 12.1 FILESYSTEM DRIVERS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | ext4 directory traversal | `CWE-22` | 🟠 High |
+| 2 | ext4 inode corruption | `CWE-123` | 🔴 Critical |
+| 3 | ext4 journal replay overflow | `CWE-120` | 🔴 Critical |
+| 4 | btrfs chunk offset OOB | `CWE-125` | 🔴 Critical |
+| 5 | btrfs node pointer corruption | `CWE-476` | 🔴 Critical |
+| 6 | btrfs ABBA deadlock (CVE-2026-23036) [citation:1] | `CWE-667` | 🟠 High |
+| 7 | XFS log recovery OOB | `CWE-787` | 🔴 Critical |
+| 8 | FUSE double fetch | `CWE-366` | 🟠 High |
+| 9 | FUSE permission bypass | `CWE-285` | 🟠 High |
+| 10 | JFFS2 memory corruption | `CWE-122` | 🔴 Critical |
+| 11 | Overlayfs copy-up race | `CWE-362` | 🔴 Critical |
+| 12 | Overlayfs priv escalation | `CWE-269` | 🔴 Critical |
+| 13 | Squashfs symlink overflow | `CWE-120` | 🟠 High |
+| 14 | tmpfs quota bypass | `CWE-285` | 🟡 Medium |
+
+### 🔐 12.2 MOUNT OPERATIONS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Mount option injection | `CWE-94` | 🔴 Critical |
+| 2 | Mount binary (setuid) overflow | `CWE-120` | 🔴 Critical |
+| 3 | Unprivileged mount (user ns) | `CWE-284` | 🟠 High |
+| 4 | Bind mount escape | `CWE-22` | 🔴 Critical |
+| 5 | Recursive bind mount DoS | `CWE-835` | 🟡 Medium |
+| 6 | Mount table corruption | `CWE-123` | 🟠 High |
+| 7 | umount race (TOCTOU) | `CWE-367` | 🟠 High |
+| 8 | pivot_root escape | `CWE-284` | 🔴 Critical |
+| 9 | chroot escape (chdir) | `CWE-284` | 🟠 High |
+
+### 💿 12.3 BLOCK LAYER
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | I/O scheduler race | `CWE-362` | 🟡 Medium |
+| 2 | DMA buffer overflow | `CWE-120` | 🔴 Critical |
+| 3 | Disk firmware attack | `CWE-506` | 🔴 Critical |
+| 4 | Bad block mapping corruption | `CWE-123` | 🟠 High |
+| 5 | Partition table overflow | `CWE-120` | 🟠 High |
+| 6 | GPT header corruption | `CWE-374` | 🟠 High |
+
+---
+
+## 13. 🐧 **KERNEL CORE**
+
+### 🔒 13.1 PRIVILEGE ESCALATION (LOCAL)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | SUID binary hijacking | `CWE-732` | 🔴 Critical |
+| 2 | Capability confusion (cap_sys_admin) | `CWE-276` | 🔴 Critical |
+| 3 | setuid() wrapper bypass | `CWE-285` | 🟠 High |
+| 4 | Credential struct overflow | `CWE-122` | 🔴 Critical |
+| 5 | User namespace escape | `CWE-284` | 🔴 Critical |
+| 6 | PAM bypass (CVE-2025-6018) [citation:6] | `CWE-287` | 🔴 Critical |
+| 7 | udisks2 mount LPE (CVE-2025-6019) [citation:6] | `CWE-59` | 🔴 Critical |
+
+### 🔓 13.2 CAPABILITIES
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Ambient capability leakage | `CWE-200` | 🟡 Medium |
+| 2 | Bypass via setns + capabilities | `CWE-284` | 🟠 High |
+| 3 | Inheritable capabilities attack | `CWE-732` | 🟠 High |
+| 4 | File capabilities confusion | `CWE-843` | 🟡 Medium |
+| 5 | Capability bounding set bypass | `CWE-284` | 🟠 High |
+
+### 🧵 13.3 SCHEDULER / TIMER
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Timer overflow | `CWE-190` | 🟠 High |
+| 2 | Timer UAF | `CWE-416` | 🔴 Critical |
+| 3 | CPU affinity DoS | `CWE-770` | 🟡 Medium |
+| 4 | Scheduler priority confusion | `CWE-269` | 🟡 Medium |
+| 5 | Load average leak | `CWE-200` | 🟢 Low |
+| 6 | CFS group scheduling bypass | `CWE-285` | 🟡 Medium |
+
+### 🧠 13.4 MEMORY MANAGEMENT (MM)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Slab allocator UAF | `CWE-416` | 🔴 Critical |
+| 2 | Slab out-of-bounds (kmalloc) | `CWE-787` | 🔴 Critical |
+| 3 | Buddy allocator overflow | `CWE-190` | 🟠 High |
+| 4 | Page cache injection | `CWE-94` | 🟠 High |
+| 5 | Huge page handling overflow | `CWE-190` | 🟠 High |
+| 6 | KSM (Kernel Samepage Merging) leak | `CWE-200` | 🟡 Medium |
+| 7 | mremap() overflow | `CWE-122` | 🔴 Critical |
+| 8 | mmap() prot flag bypass | `CWE-284` | 🟠 High |
+| 9 | Stack guard page bypass | `CWE-284` | 🟡 Medium |
+
+### 🔄 13.5 IPC (INTER-PROCESS COMMUNICATION)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Pipe buffer overflow | `CWE-120` | 🟠 High |
+| 2 | FIFO race | `CWE-362` | 🟡 Medium |
+| 3 | Shared memory (shm) overflow | `CWE-120` | 🟠 High |
+| 4 | Message queue (mq) integer overflow | `CWE-190` | 🟠 High |
+| 5 | Semaphore use-after-free | `CWE-416` | 🔴 Critical |
+| 6 | D-Bus auth bypass | `CWE-287` | 🔴 Critical |
+| 7 | D-Bus fd leak | `CWE-404` | 🟡 Medium |
+
+---
+
+## 14. 📦 **CONTAINERS & VIRTUALIZATION**
+
+### 🐳 14.1 DOCKER / CONTAINERD
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | runc container escape (CVE-2019-5736) | `CWE-416` | 🔴 Critical |
+| 2 | Docker socket mounting | `CWE-668` | 🔴 Critical |
+| 3 | Privileged container | `CWE-250` | 🔴 Critical |
+| 4 | Host PID namespace mapping | `CWE-668` | 🟠 High |
+| 5 | Host network namespace (--net=host) | `CWE-668` | 🟠 High |
+| 6 | Bind mount injection (OC-13) [citation:10] | `CWE-94` | 🔴 Critical |
+| 7 | Unconfined seccomp/AppArmor [citation:10] | `CWE-284` | 🔴 Critical |
+| 8 | Capability (CAP_SYS_ADMIN) in container | `CWE-276` | 🔴 Critical |
+| 9 | cgroup release agent escape | `CWE-284` | 🔴 Critical |
+| 10 | /proc/sysrq-trigger escape | `CWE-284` | 🟠 High |
+| 11 | /sys/kernel/security escape | `CWE-284` | 🟠 High |
+| 12 | Device cgroup bypass | `CWE-285` | 🟠 High |
+| 13 | Newline injection in YAML (Incus CVE-2026-23953) [citation:5] | `CWE-93` | 🔴 Critical |
+
+### ☸️ 14.2 KUBERNETES
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | kubelet auth bypass | `CWE-306` | 🔴 Critical |
+| 2 | API server SSRF | `CWE-918` | 🟠 High |
+| 3 | etcd no auth | `CWE-306` | 🔴 Critical |
+| 4 | Service account token leak | `CWE-200` | 🔴 Critical |
+| 5 | Privileged pod (securityContext) | `CWE-732` | 🔴 Critical |
+| 6 | HostPath volume escape | `CWE-22` | 🔴 Critical |
+| 7 | Kubeconfig leakage | `CWE-312` | 🔴 Critical |
+| 8 | RBAC privilege escalation | `CWE-269` | 🔴 Critical |
+| 9 | Admission controller bypass | `CWE-285` | 🟠 High |
+
+### 💻 14.3 KVM / VIRTUALIZATION
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | VM escape via hypervisor bug | `CWE-120` | 🔴 Critical |
+| 2 | KVM irqfd routing corruption (CVE-2026-23198) [citation:7] | `CWE-123` | 🔴 Critical |
+| 3 | VCPU ioctl overflow | `CWE-120` | 🔴 Critical |
+| 4 | EPT (Extended Page Table) confusion | `CWE-843` | 🔴 Critical |
+| 5 | SVM (AMD-V) register leak | `CWE-200` | 🟠 High |
+| 6 | VMX (Intel VT-x) vmexit DoS | `CWE-400` | 🟠 High |
+| 7 | QEMU device emulation overflow | `CWE-122` | 🔴 Critical |
+| 8 | VIRTIO ring buffer overflow | `CWE-120` | 🔴 Critical |
+| 9 | PCI passthrough DMA attack | `CWE-284` | 🔴 Critical |
+| 10 | Hyper-V (Windows guest) escape | `CWE-120` | 🔴 Critical |
+
+### 📦 14.4 NAMESPACES
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | User namespace uid mapping overflow | `CWE-190` | 🟠 High |
+| 2 | setns() UAF | `CWE-416` | 🔴 Critical |
+| 3 | Mount namespace escape via pivot_root | `CWE-284` | 🔴 Critical |
+| 4 | PID namespace reuse | `CWE-416` | 🟠 High |
+| 5 | Network namespace device leak | `CWE-200` | 🟡 Medium |
+| 6 | IPC namespace object reuse | `CWE-416` | 🟠 High |
+
+### 📊 14.5 CGROUPS (CONTROL GROUPS)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | cgroup release agent escape | `CWE-284` | 🔴 Critical |
+| 2 | cgroup v2 delegation bypass | `CWE-285` | 🟠 High |
+| 3 | cgroup freezer DoS | `CWE-400` | 🟡 Medium |
+| 4 | cgroup notify_on_release leak | `CWE-200` | 🟡 Medium |
+
+---
+
+## 15. 🔌 **DEVICE DRIVERS**
+
+### 🎮 15.1 GPU DRIVERS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | i915 (Intel) command parser bypass | `CWE-284` | 🔴 Critical |
+| 2 | i915 buffer overflow | `CWE-120` | 🔴 Critical |
+| 3 | NVIDIA (proprietary) UAF | `CWE-416` | 🔴 Critical |
+| 4 | AMDGPU ring buffer overflow | `CWE-120` | 🔴 Critical |
+| 5 | GPU memory mapping leak | `CWE-200` | 🟠 High |
+| 6 | OpenGL/Vulkan ioctl overflow | `CWE-120` | 🔴 Critical |
+
+### 🖥️ 15.2 DISPLAY / DRM
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | DRM (Direct Rendering Manager) ioctl OOB | `CWE-125` | 🔴 Critical |
+| 2 | Framebuffer mmap overflow | `CWE-787` | 🔴 Critical |
+| 3 | Mode-setting integer overflow | `CWE-190` | 🟠 High |
+| 4 | EDID parsing overflow | `CWE-120` | 🔴 Critical |
+
+### 📶 15.3 NETWORK DRIVERS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Wi-Fi firmware injection | `CWE-94` | 🔴 Critical |
+| 2 | Bluetooth (BlueBorne) | `CWE-120` | 🔴 Critical |
+| 3 | Ethernet driver ring buffer overflow | `CWE-120` | 🔴 Critical |
+| 4 | VLAN offload confusion | `CWE-843` | 🟠 High |
+| 5 | TSO/GSO (TCP Segmentation Offload) overflow | `CWE-190` | 🟠 High |
+| 6 | RSS (Receive Side Scaling) indirection table OOB | `CWE-125` | 🟠 High |
+| 7 | MAC80211 frame parsing overflow | `CWE-120` | 🔴 Critical |
+
+### 🔊 15.4 SOUND / AUDIO
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | ALSA (Advanced Linux Sound Architecture) buffer overflow | `CWE-120` | 🔴 Critical |
+| 2 | USB audio descriptor overflow | `CWE-122` | 🔴 Critical |
+| 3 | MIDI device UAF | `CWE-416` | 🔴 Critical |
+| 4 | OSS (Open Sound System) emulation overflow | `CWE-120` | 🟠 High |
+| 5 | HDA (High Definition Audio) register R/W bypass | `CWE-284` | 🟠 High |
+
+### 🖱️ 15.5 INPUT DEVICES
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | USB HID descriptor overflow | `CWE-120` | 🔴 Critical |
+| 2 | evdev event injection | `CWE-94` | 🟠 High |
+| 3 | Keyboard LED state confusion | `CWE-843` | 🟢 Low |
+| 4 | Touchpad gesture buffer overflow | `CWE-120` | 🟡 Medium |
+| 5 | Joystick axis overflow | `CWE-190` | 🟡 Medium |
+
+### 🔌 15.6 USB
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | USB descriptor buffer overflow | `CWE-120` | 🔴 Critical |
+| 2 | BadUSB (firmware reprogramming) | `CWE-506` | 🔴 Critical |
+| 3 | USB device UAF on disconnect | `CWE-416` | 🔴 Critical |
+| 4 | USB hub descriptor overflow | `CWE-120` | 🔴 Critical |
+| 5 | USB HID report overflow | `CWE-120` | 🔴 Critical |
+| 6 | USB mass storage SCSI command injection | `CWE-94` | 🟠 High |
+
+### 💽 15.7 STORAGE DRIVERS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | NVMe command overflow | `CWE-120` | 🔴 Critical |
+| 2 | SCSI mid-layer UAF | `CWE-416` | 🔴 Critical |
+| 3 | AHCI port overflow | `CWE-120` | 🔴 Critical |
+| 4 | SD/MMC driver overflow | `CWE-120` | 🔴 Critical |
+| 5 | mpt3sas (LSI) ioctl overflow | `CWE-120` | 🔴 Critical |
+
+---
+
+## 16. 🔥 **FIRMWARE & BOOT**
+
+### 🥾 16.1 BOOTLOADER
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | GRUB2 buffer overflow (BootHole) | `CWE-120` | 🔴 Critical |
+| 2 | GRUB2 module loading bypass | `CWE-284` | 🔴 Critical |
+| 3 | SecureBoot bypass (BootHole) | `CWE-284` | 🔴 Critical |
+| 4 | UEFI boot variable overflow | `CWE-120` | 🔴 Critical |
+| 5 | UEFI capsule update bypass | `CWE-347` | 🔴 Critical |
+| 6 | Bootkit injection | `CWE-506` | 🔴 Critical |
+| 7 | ACPI table injection | `CWE-94` | 🔴 Critical |
+
+### 🔑 16.2 SECUREBOOT
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | SecureBoot bypass (dbx bypass) | `CWE-284` | 🔴 Critical |
+| 2 | SecureBoot key theft | `CWE-312` | 🔴 Critical |
+| 3 | SBAT (Secure Boot Advanced Targeting) bypass | `CWE-284` | 🟠 High |
+| 4 | Shim bootloader bypass | `CWE-284` | 🔴 Critical |
+
+### ⚙️ 16.3 UEFI RUNTIME
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | SMM (System Management Mode) privilege escalation | `CWE-250` | 🔴 Critical |
+| 2 | UEFI variable storage overflow | `CWE-120` | 🔴 Critical |
+| 3 | UEFI runtime services UAF | `CWE-416` | 🔴 Critical |
+| 4 | NVRAM corruption | `CWE-123` | 🟠 High |
+| 5 | LogoFAIL (image parsing) | `CWE-120` | 🔴 Critical |
+
+### 📟 16.4 ACPI
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | ACPI AML interpreter overflow | `CWE-120` | 🔴 Critical |
+| 2 | ACPI table corruption | `CWE-123` | 🟠 High |
+| 3 | ACPI sleep state confusion | `CWE-843` | 🟡 Medium |
+| 4 | ACPI EC (Embedded Controller) buffer overflow | `CWE-120` | 🟠 High |
+
+---
+
+## 17. 🛠️ **USERSPACE CRITICAL COMPONENTS**
+
+### 🔐 17.1 PAM (PLUGGABLE AUTHENTICATION MODULES)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | PAM config injection | `CWE-94` | 🔴 Critical |
+| 2 | PAM module path hijacking | `CWE-427` | 🔴 Critical |
+| 3 | pam_unix.so buffer overflow | `CWE-120` | 🔴 Critical |
+| 4 | pam_tally2 race | `CWE-362` | 🟡 Medium |
+| 5 | pam_namespace escape | `CWE-284` | 🟠 High |
+| 6 | PAM authentication bypass (CVE-2025-6018) [citation:6] | `CWE-287` | 🔴 Critical |
+
+### 🐚 17.2 SYSTEM UTILITIES
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | sudo buffer overflow (CVE-2021-3156) | `CWE-122` | 🔴 Critical |
+| 2 | sudo argument injection | `CWE-88` | 🔴 Critical |
+| 3 | su authentication bypass | `CWE-287` | 🟠 High |
+| 4 | passwd buffer overflow | `CWE-120` | 🔴 Critical |
+| 5 | chsh (change shell) overflow | `CWE-120` | 🟠 High |
+| 6 | cron job injection | `CWE-94` | 🔴 Critical |
+| 7 | at job directory race | `CWE-362` | 🟠 High |
+| 8 | logrotate configuration injection | `CWE-94` | 🔴 Critical |
+| 9 | logrotate path traversal | `CWE-22` | 🔴 Critical |
+| 10 | systemd service file injection | `CWE-94` | 🔴 Critical |
+| 11 | systemd timer confusion | `CWE-843` | 🟡 Medium |
+| 12 | dbus-daemon UAF | `CWE-416` | 🔴 Critical |
+
+### 📦 17.3 PACKAGE MANAGERS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | APT repo hijack (MITM) | `CWE-300` | 🔴 Critical |
+| 2 | APT gpg signature bypass | `CWE-347` | 🔴 Critical |
+| 3 | DPKG file overwrite | `CWE-59` | 🟠 High |
+| 4 | RPM package signature bypass | `CWE-347` | 🔴 Critical |
+| 5 | YUM/DNF repo injection | `CWE-94` | 🔴 Critical |
+| 6 | Pacman database corruption | `CWE-123` | 🟠 High |
+| 7 | Snap confinement bypass | `CWE-284` | 🔴 Critical |
+| 8 | Flatpak sandbox escape | `CWE-284` | 🔴 Critical |
+
+### 📚 17.4 STANDARD LIBRARIES
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | glibc heap overflow | `CWE-122` | 🔴 Critical |
+| 2 | glibc stack overflow | `CWE-121` | 🔴 Critical |
+| 3 | glibc integer overflow (strlen, memcpy) | `CWE-190` | 🔴 Critical |
+| 4 | glibc locale overflow | `CWE-120` | 🟠 High |
+| 5 | glibc getaddrinfo() stack overflow | `CWE-121` | 🔴 Critical |
+| 6 | glibc qsort() out-of-bounds | `CWE-125` | 🟠 High |
+| 7 | musl libc malloc UAF | `CWE-416` | 🔴 Critical |
+| 8 | OpenSSL heap overflow (CVE-2024-5535) | `CWE-122` | 🔴 Critical |
+| 9 | OpenSSL side channel | `CWE-385` | 🟠 High |
+| 10 | libgcrypt buffer overflow (CVE-2025-24860) | `CWE-120` | 🔴 Critical |
+| 11 | libpcap buffer overflow | `CWE-120` | 🔴 Critical |
+| 12 | libcurl integer overflow | `CWE-190` | 🔴 Critical |
+| 13 | libxml2 parser overflow | `CWE-122` | 🔴 Critical |
+
+---
+
+## 18. 🔬 **SYSTEM SERVICES & DAEMONS**
+
+### 🎧 18.1 AUDIT / LOGGING
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | auditd overflow | `CWE-120` | 🔴 Critical |
+| 2 | audit log injection | `CWE-117` | 🟡 Medium |
+| 3 | rsyslog overflow | `CWE-120` | 🔴 Critical |
+| 4 | journald overflow | `CWE-120` | 🟠 High |
+| 5 | journald rate limit bypass | `CWE-770` | 🟡 Medium |
+| 6 | syslog-ng configuration injection | `CWE-94` | 🟠 High |
+
+### ⏰ 18.2 TIMING / NTP
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | NTP amplification | `CWE-770` | 🔴 Critical |
+| 2 | NTP monlist DoS | `CWE-400` | 🔴 Critical |
+| 3 | chrony buffer overflow | `CWE-120` | 🔴 Critical |
+| 4 | Time shift attack (leap second) | `CWE-400` | 🟡 Medium |
+
+### 🖨️ 18.3 PRINTING (CUPS)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | CUPS filter buffer overflow | `CWE-120` | 🔴 Critical |
+| 2 | CUPS IPP (Internet Printing Protocol) parsing overflow | `CWE-122` | 🔴 Critical |
+| 3 | CUPS path traversal | `CWE-22` | 🟠 High |
+| 4 | CUPS browsed DoS | `CWE-400` | 🟡 Medium |
+
+### 🌐 18.4 WEB SERVERS (COMMON)
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Apache mod_php overflow | `CWE-120` | 🔴 Critical |
+| 2 | Apache .htaccess bypass | `CWE-285` | 🟠 High |
+| 3 | Nginx integer overflow | `CWE-190` | 🔴 Critical |
+| 4 | Nginx request smuggling | `CWE-444` | 🔴 Critical |
+| 5 | Lighttpd overflow | `CWE-120` | 🔴 Critical |
+
+---
+
+## 19. 🔮 **EMERGING / FUTURE**
+
+### 🧠 19.1 AI/ML
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Model poisoning | `CWE-506` | 🔴 Critical |
+| 2 | Training data extraction | `CWE-200` | 🔴 Critical |
+| 3 | Inference side channel | `CWE-385` | 🟠 High |
+| 4 | Adversarial examples (DoS) | `CWE-770` | 🟡 Medium |
+| 5 | ML framework overflow | `CWE-120` | 🔴 Critical |
+
+### 🔗 19.2 BLOCKCHAIN / WEB3
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Smart contract reentrancy | `CWE-841` | 🔴 Critical |
+| 2 | 51% attack | `CWE-330` | 🔴 Critical |
+| 3 | Wallet key extraction | `CWE-312` | 🔴 Critical |
+| 4 | RPC endpoint overflow | `CWE-120` | 🔴 Critical |
+
+### 🛰️ 19.3 5G/6G
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | GTP (GPRS Tunneling Protocol) overflow | `CWE-120` | 🔴 Critical |
+| 2 | PFCP (Packet Forwarding Control Protocol) injection | `CWE-94` | 🔴 Critical |
+| 3 | gNB (base station) hijack | `CWE-306` | 🔴 Critical |
+| 4 | IMSI catcher bypass | `CWE-285` | 🟠 High |
+
+---
+
+## 20. 🔒 **CRYPTOGRAPHIC FAILURES**
+
+### 🔑 20.1 RANDOM NUMBER GENERATORS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | /dev/urandom seed reuse | `CWE-331` | 🟠 High |
+| 2 | getrandom() blocking bypass | `CWE-285` | 🟡 Medium |
+| 3 | RDRAND (Intel) backdoor suspicion | `CWE-338` | 🟢 Low |
+| 4 | Entropy starvation | `CWE-331` | 🟡 Medium |
+| 5 | Predictable session IDs | `CWE-330` | 🔴 Critical |
+
+### 🧪 20.2 PROTOCOL IMPLEMENTATIONS
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | SSL/TLS heartbeat read (Heartbleed) | `CWE-126` | 🔴 Critical |
+| 2 | TLS 1.3 downgrade | `CWE-757` | 🟠 High |
+| 3 | Certificate validation bypass | `CWE-295` | 🔴 Critical |
+| 4 | OCSP (Online Certificate Status Protocol) response injection | `CWE-94` | 🟠 High |
+| 5 | CRL (Certificate Revocation List) overflow | `CWE-120` | 🟡 Medium |
+| 6 | SSH known_hosts injection | `CWE-94` | 🟠 High |
+
+### 🔐 20.3 KEY MANAGEMENT
+
+| # | Attack Vector | CWE | Risk Level |
+|---|---------------|-----|------------|
+| 1 | Private key leak (memory scraping) | `CWE-312` | 🔴 Critical |
+| 2 | Key file permissions (world-readable) | `CWE-732` | 🔴 Critical |
+| 3 | Kernel keyring UAF | `CWE-416` | 🔴 Critical |
+| 4 | Keyring permission bypass | `CWE-285` | 🟠 High |
+| 5 | TPM (Trusted Platform Module) replay attack | `CWE-294` | 🟠 High |
+| 6 | TPM bus snooping | `CWE-319` | 🟡 Medium |
+
+---
+
+## 21. 📊 **STATISTICS / METRICS**
+
+| # | Category | Total Count |
+|---|----------|--------------|
+| 1 | Network Sniffers (L2-L7) | 19 |
+| 2 | eBPF & C-Based Sniffers | 75 |
+| 3 | RPKI Validator | 1 |
+| 4 | Transcendent Editor | 122 |
+| 5 | Translator (Editor/TUI) | 124 |
+| 6 | Local Great Analyzer | 1 |
+| 7 | Kryocache | 78 |
+| 8 | Transcendent Bridge | 180 |
+| 9 | Onion Routing | 105 |
+| 10 | Kryo Arch | 1 |
+| 11 | Hardware / Architecture (CPU) | 35 |
+| 12 | File Systems & Storage | 40 |
+| 13 | Kernel Core | 39 |
+| 14 | Containers & Virtualization | 48 |
+| 15 | Device Drivers | 42 |
+| 16 | Firmware & Boot | 23 |
+| 17 | Userspace Critical Components | 45 |
+| 18 | System Services & Daemons | 18 |
+| 19 | Emerging / Future | 13 |
+| 20 | Cryptographic Failures | 22 |
+
+---
+
+## 📊 **GRAND TOTAL**
+
+| Category | Count |
+|----------|-------|
+| **Total Attack Vectors** | **1108** |
+
+---
+
