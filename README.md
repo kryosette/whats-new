@@ -895,36 +895,6 @@
 
 ## 7. 🚀 **KRYOCACHE**
 
-### 🔧 7.1 CORE FEATURES
-
-| # | Component | Description |
-|---|-----------|-------------|
-| 1 | Hash Table (Dict) | Key-value store (strings/binary blobs), collision resistance, dynamic rehashing |
-| 2 | TTL | Per-key/global expiration, lazy/active background sweeper |
-| 3 | Eviction Policies | LRU, LFU, FIFO, Random, Custom weight-based |
-| 4 | Transactions | Atomic multi-ops, rollback, optimistic/pessimistic locking |
-| 5 | Data Types | Strings, Lists, Sets, Sorted Sets, Hashes, Bitmaps, Hyperloglog, Streams |
-| 6 | Persistence | Snapshot (RDB), AOF, async flush, compact on load |
-| 7 | Replication | Master-slave, multi-master, partial/full sync |
-| 8 | Clustering | Sharding, virtual nodes, auto failover, gossip protocol |
-| 9 | Pub/Sub | Channel/pattern subscribe, exact/wildcard match |
-| 10 | Lua Scripting | Eval, script load, atomic execution, script kill |
-| 11 | Pipelining | Batch commands, reduced round trips |
-| 12 | Concurrency | Multi-threaded, lock-free (RCU), fine-grained locking |
-| 13 | Memory Efficiency | Pool allocator, slab allocation, compression, pointer compression |
-| 14 | Security | Auth (password), ACLs, TLS, command whitelist |
-| 15 | Monitoring | Prometheus metrics, latency tracking, hit/miss ratio |
-| 16 | Events & Notify | Keyspace notifications, key events |
-| 17 | Backup & Restore | Online backup, point-in-time recovery |
-| 18 | Scan Iterators | Non-blocking full scan, pattern/type filter |
-| 19 | Sorting | In-memory sort, by key pattern, limit/offset |
-| 20 | Geo Spatial | Geo add, radius search, geohash |
-| 21 | Counters | Atomic incr/decr, rate limiters, sliding window |
-| 22 | Bloom Filter | Probabilistic existence, scalable bloom, cuckoo filter |
-| 23 | Time Series | Append-only, downsampling, aggregation |
-| 24 | Locking Primitives | Distributed locks, Redlock, spinlock |
-| 25 | Subscribe to Files | Watch file changes, update cache on file mod |
-
 ### ⚔️ 7.2 ATTACKS & VULNERABILITIES
 
 | # | Category | Attack Vector | CWE | Risk |
