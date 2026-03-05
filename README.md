@@ -19,6 +19,14 @@
 
 ---
 
+## 📊 **GRAND TOTAL**
+
+| Category | Count |
+|----------|-------|
+| **Total Attack Vectors** | **1311** |
+
+---
+
 ## 1. 🌐 **NETWORK SNIFFERS (L2-L7)**
 
 ### 📡 L2 Sniffers
@@ -2109,40 +2117,5 @@
 | 5 | TPM (Trusted Platform Module) replay attack | `CWE-294` | 🟠 High |
 | 6 | TPM bus snooping | `CWE-319` | 🟡 Medium |
 
----
 
-## 21. 📊 **STATISTICS / METRICS**
-
-| # | Category | Total Count |
-|---|----------|--------------|
-| 1 | Network Sniffers (L2-L7) | 19 |
-| 2 | eBPF & C-Based Sniffers | 75 |
-| 3 | RPKI Validator | 1 |
-| 4 | Transcendent Editor | 122 |
-| 5 | Translator (Editor/TUI) | 124 |
-| 6 | Local Great Analyzer | 1 |
-| 7 | Kryocache | 78 |
-| 8 | Transcendent Bridge | 180 |
-| 9 | Onion Routing | 105 |
-| 10 | Kryo Arch | 1 |
-| 11 | Hardware / Architecture (CPU) | 35 |
-| 12 | File Systems & Storage | 40 |
-| 13 | Kernel Core | 39 |
-| 14 | Containers & Virtualization | 48 |
-| 15 | Device Drivers | 42 |
-| 16 | Firmware & Boot | 23 |
-| 17 | Userspace Critical Components | 45 |
-| 18 | System Services & Daemons | 18 |
-| 19 | Emerging / Future | 13 |
-| 20 | Cryptographic Failures | 22 |
-
----
-
-## 📊 **GRAND TOTAL**
-
-| Category | Count |
-|----------|-------|
-| **Total Attack Vectors** | **1311** |
-
----
 
