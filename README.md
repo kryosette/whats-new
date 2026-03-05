@@ -2142,7 +2142,7 @@
 
 | Category | Count |
 |----------|-------|
-| **Total Attack Vectors** | **1108** |
+| **Total Attack Vectors** | **1311** |
 
 ---
 
