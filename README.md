@@ -25,7 +25,9 @@
 |----------|-------|
 | **Total Attack Vectors** | **1311** |
 
-<span style="color:red">## **Eliminated: 8/1311**</span>
+# $${\color{red}Eliminated:\ 8/1311}$$
+
+
 
 
 ---
