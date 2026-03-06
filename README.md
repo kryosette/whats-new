@@ -78,15 +78,15 @@
 
 | # | Attack Vector | CWE | Risk Level |
 |---|---------------|-----|------------|
-| 1 | Verifier bypass | `CWE-20` | 🔴 Critical | ✅
-| 2 | Out-of-bounds map access | `CWE-787` | 🔴 Critical | ✅
-| 3 | Integer overflow in bounds | `CWE-190` | 🟠 High | ✅
-| 4 | Arithmetic OOB | `CWE-682` | 🟠 High | ✅
-| 5 | Null ptr deref in helper | `CWE-476` | 🔴 Critical | ✅
-| 6 | 32-bit truncation bug | `CWE-197` | 🟡 Medium | ✅
-| 7 | Spill/fill corruption | `CWE-121` | 🔴 Critical | ✅
+| 1 ✅ | Verifier bypass | `CWE-20` | 🔴 Critical |
+| 2 ✅ | Out-of-bounds map access | `CWE-787` | 🔴 Critical |
+| 3 ✅ | Integer overflow in bounds | `CWE-190` | 🟠 High |
+| 4 ✅ | Arithmetic OOB | `CWE-682` | 🟠 High |
+| 5 ✅ | Null ptr deref in helper | `CWE-476` | 🔴 Critical |
+| 6 ✅ | 32-bit truncation bug | `CWE-197` | 🟡 Medium |
+| 7 ✅ | Spill/fill corruption | `CWE-121` | 🔴 Critical |
 | 8 | Loops unbound (old kernels) | `CWE-835` | 🟠 High |
-| 9 | Pointer leak to userspace | `CWE-200` | 🟠 High | ✅
+| 9 ✅ | Pointer leak to userspace | `CWE-200` | 🟠 High |
 
 ### ⚙️ 2.2 eBPF JIT
 
