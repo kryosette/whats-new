@@ -24,6 +24,7 @@
 | Category | Count |
 |----------|-------|
 | **Total Attack Vectors** | **1311** |
+Eliminated: 8/1311
 
 ---
 
